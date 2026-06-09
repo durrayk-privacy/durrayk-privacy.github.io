@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durray Kausar — Privacy Program Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0f0e0c; --ink-2: #3d3b35; --ink-3: #7a7770;
+    --paper: #f7f4ef; --paper-2: #ede9e1; --paper-3: #e1dcd2;
+    --accent: #1a4a3a; --accent-light: #d4e8df; --accent-mid: #2d7a5f;
+    --rule: rgba(15,14,12,0.12);
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'Instrument Sans', system-ui, sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; font-size: 15px; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { font-size: 12px; font-weight: 500; color: var(--ink-3); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .hero { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .hero-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 1rem; }
+  .hero-name { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.0; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.5rem; }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-title { font-size: 15px; font-weight: 500; color: var(--ink-2); margin-bottom: 0.5rem; }
+  .hero-certs { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); margin-bottom: 2rem; line-height: 1.8; }
+  .hero-contact { display: flex; flex-direction: column; gap: 0.4rem; }
+  .hero-contact a { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
+  .hero-bio { font-size: 15px; line-height: 1.75; color: var(--ink-2); border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-bottom: 2rem; }
+  .expertise-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-family: var(--mono); font-size: 11px; padding: 4px 10px; background: var(--paper-2); border: 1px solid var(--paper-3); border-radius: 2px; color: var(--ink-2); }
+  .tag.accent { background: var(--accent-light); border-color: #b5d4c8; color: var(--accent); }
+  .divider { max-width: 900px; margin: 0 auto; border: none; border-top: 1px solid var(--rule); }
+  .section { max-width: 900px; margin: 0 auto; padding: 3.5rem 2rem; }
+  .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
+  .section-num { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.08em; }
+  .section-title { font-family: var(--serif); font-size: 1.9rem; letter-spacing: -0.015em; color: var(--ink); }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .card { background: var(--paper); padding: 1.5rem; }
+  .card-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.75rem; }
+  .card-title { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.25; }
+  .card-body { font-size: 13.5px; color: var(--ink-2); line-height: 1.65; }
+  .reg-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 2rem; }
+  .reg-table th { text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  .reg-table td { padding: 0.75rem 1rem 0.75rem 0; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+  .reg-table tr:last-child td { border-bottom: none; }
+  .reg-table td:first-child { font-weight: 500; color: var(--ink); min-width: 140px; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 2rem; }
+  .metric { background: var(--paper); padding: 1.25rem 1.5rem; }
+  .metric-num { font-family: var(--serif); font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.35rem; }
+  .metric-label { font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.05em; line-height: 1.4; }
+  .steps { counter-reset: step; display: flex; flex-direction: column; gap: 0; }
+  .step { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+  .step:last-child { border-bottom: none; }
+  .step-num { font-family: var(--mono); font-size: 11px; color: var(--ink-3); padding-top: 2px; }
+  .step-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 0.25rem; }
+  .step-desc { font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .tier-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+  .tier-row:last-child { border-bottom: none; }
+  .tier-badge { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .tier-unacceptable { background: #fce8e8; color: #8b1a1a; }
+  .tier-high { background: #fff3e0; color: #7a4200; }
+  .tier-limited { background: #e8f4fd; color: #1a4a6e; }
+  .tier-minimal { background: var(--paper-2); color: var(--ink-3); }
+  .tier-label { font-weight: 500; font-size: 13.5px; color: var(--ink); margin-bottom: 0.2rem; }
+  .tier-desc { font-size: 13px; color: var(--ink-2); line-height: 1.55; }
+  footer { border-top: 1px solid var(--rule); padding: 3rem 2rem; max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-name { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-left { animation: fadeUp 0.6s ease both; }
+  .hero-right { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  @media (max-width: 680px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.25rem; }
+    .two-col { grid-template-columns: 1fr; }
+    nav { padding: 0 1.25rem; }
+    .nav-links { gap: 0.75rem; }
+    .section { padding: 2.5rem 1.25rem; }
+    footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Durray Kausar</a>
+  <ul class="nav-links">
+    <li><a href="#havenwatch">Havenwatch</a></li>
+    <li><a href="#ai">AI Gov</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#dsar">DSAR</a></li>
+    <li><a href="#vendor">Vendor</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Privacy Portfolio</p>
+    <h1 class="hero-name">Durray<br><em>Kausar</em></h1>
+    <p class="hero-title">Privacy Program Manager · Data Protection &amp; Compliance Lead · AI Governance</p>
+    <p class="hero-certs">CIPP/US (In Progress) · AIGP (In Progress)<br>HIPAA Certified<br>MS Cybersecurity &amp; Data Privacy Law<br>Albany Law, New York</p>
+    <div class="hero-contact">
+      <a href="mailto:durray25@gmail.com">durray25@gmail.com</a>
+      <a href="tel:8456658202">(845) 665-8202</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn ↗</a>
+      <span style="font-size:12px; color:var(--ink-3); margin-top:4px;">New York &amp; North Carolina · Remote/Hybrid</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-bio">Privacy operations leader with 12+ years building data protection programs from the ground up across EdTech, SaaS, and cloud environments — without outside contractors. Translating GDPR, CPRA, LGPD, HIPAA, FERPA, ECPA/SCA, COPPA, and EU AI Act requirements into audit-ready controls.</p>
+    <div class="expertise-grid">
+      <span class="tag accent">GDPR · CPRA · LGPD</span>
+      <span class="tag accent">HIPAA · FERPA</span>
+      <span class="tag accent">EU AI Act</span>
+      <span class="tag accent">ECPA · SCA · COPPA</span>
+      <span class="tag">DSAR Fulfillment</span>
+      <span class="tag">PIAs / DPIAs / LIAs</span>
+      <span class="tag">Article 30 ROPA</span>
+      <span class="tag">Vendor Risk</span>
+      <span class="tag">Incident Response</span>
+      <span class="tag">Privacy-by-Design</span>
+      <span class="tag">ISO 27701 / 27001</span>
+      <span class="tag">NIST Privacy Framework</span>
+      <span class="tag">OneTrust · TrustArc</span>
+      <span class="tag">Azure Compliance</span>
+      <span class="tag">Pseudonymization</span>
+      <span class="tag">DPA Drafting</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="havenwatch">
+  <div class="section-header">
+    <span class="section-num">01 — 04</span>
+    <h2 class="section-title">Havenwatch Foundation</h2>
+  </div>
+  <p style="font-size:14px; color:var(--ink-2); max-width:640px; margin-bottom:2rem; line-height:1.7;"><strong>2026:</strong> Data protection framework for child safety case systems. Designed 4-tier access architecture, data minimization & pseudonymization pipelines, and retention schedules across SCA, COPPA, ECPA, GDPR, and HIPAA compliance domains. Zero control failures before go-live.</p>
+
+  <div class="steps" style="margin-bottom:2rem;">
+    <div class="step"><span class="step-num">—</span><div><p class="step-title">Access &amp; authentication</p><p class="step-desc">4-tier architecture: Tier 4 (minor records) requires hardware token MFA, session recording, real-time access alerts. Tier 1–3 enforce least-privilege, device compliance, 90-day access reviews.</p></div></div>
+    <div class="step"><span class="step-num">—</span><div><p class="step-title">Data minimization &amp; retention</p><p class="step-desc">Classification at intake, pseudonymization of minor identifiers, automated redaction, regulatory-aligned retention schedules with auto-expiry flags and dual-sign-off legal holds.</p></div></div>
+    <div class="step"><span class="step-num">—</span><div><p class="step-title">Regulatory alignment</p><p class="step-desc">SCA protocols (no unauthorized access) · COPPA (separate tier for children under 13) · ECPA/SCA (messaging record protection) · GDPR (DPIA for high-risk processing) · HIPAA-equivalent controls.</p></div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="ai">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">AI governance &amp; EU AI Act</h2>
+  </div>
+  <p style="font-size:14px; color:var(--ink-2); max-width:640px; margin-bottom:2rem; line-height:1.7;">Built and delivered a full governance and training program applying the EU AI Act risk tier framework across all tools — AI inventory, DPIAs, vendor due diligence, staff training, and a Privacy Champion network.</p>
+
+  <div class="two-col" style="margin-bottom:2rem;">
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">EU AI Act risk tiers</h3>
+      <div>
+        <div class="tier-row"><span class="tier-badge tier-unacceptable">Unacceptable</span><div><p class="tier-label">Social scoring · real-time biometric surveillance</p><p class="tier-desc">Blocked from deployment regardless of vendor pressure or business case.</p></div></div>
+        <div class="tier-row"><span class="tier-badge tier-high">High Risk</span><div><p class="tier-label">AI grading · behavioral prediction · automated admissions</p><p class="tier-desc">Full DPIA required · human oversight documented · annual review mandated.</p></div></div>
+        <div class="tier-row"><span class="tier-badge tier-limited">Limited Risk</span><div><p class="tier-label">AI chatbots · content recommendation engines</p><p class="tier-desc">Transparency notice required · users informed · logged in AI inventory.</p></div></div>
+        <div class="tier-row"><span class="tier-badge tier-minimal">Minimal Risk</span><div><p class="tier-label">Spell check · scheduling · non-personalized analytics</p><p class="tier-desc">Noted in AI inventory · no additional controls required.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Program components</h3>
+      <div class="steps">
+        <div class="step"><span class="step-num">—</span><div><p class="step-title">AI inventory &amp; classification</p><p class="step-desc">All AI tools mapped by EU AI Act risk tier. Shadow AI identified and governed.</p></div></div>
+        <div class="step"><span class="step-num">—</span><div><p class="step-title">Privacy impact assessments for AI</p><p class="step-desc">Dedicated DPIA template covering training data, automated decisions, bias risk, and sub-processor use. 10+ AI DPIAs completed per year.</p></div></div>
+        <div class="step"><span class="step-num">—</span><div><p class="step-title">AI bias &amp; transparency controls</p><p class="step-desc">Audit trail for automated decisions on students. Bias testing protocols before deployment. Human review required for High Risk tiers.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="program">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Privacy program architecture</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="step-num">01</span><div><p class="step-title">Discovery &amp; inventory</p><p class="step-desc">Data flow mapping · asset inventory · ROPA · legal basis documentation — weeks 1–4.</p></div></div>
+    <div class="step"><span class="step-num">02</span><div><p class="step-title">Policy &amp; governance</p><p class="step-desc">Privacy policy suite · DSAR procedures · incident response plan · retention schedule — weeks 3–8.</p></div></div>
+    <div class="step"><span class="step-num">03</span><div><p class="step-title">Risk assessment</p><p class="step-desc">PIAs/DPIAs for high-risk systems · vendor risk assessments · third-party contract and DPA reviews — weeks 6–12.</p></div></div>
+    <div class="step"><span class="step-num">04</span><div><p class="step-title">Controls &amp; automation</p><p class="step-desc">DSAR intake automation · consent management · tiered access controls · pseudonymization and redaction — weeks 8–16.</p></div></div>
+    <div class="step"><span class="step-num">05</span><div><p class="step-title">Trial run &amp; validation</p><p class="step-desc">Full program trial run · stress-test workflows · validate controls · confirm stakeholder readiness — weeks 14–18.</p></div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="incident">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Incident response &amp; case system containment</h2>
+  </div>
+  <p style="font-size:14px; color:var(--ink-2); max-width:640px; margin-bottom:2rem; line-height:1.7;">Designing breach response playbooks and containment protocols for minor-data systems. Focus: SCA/ECPA violation detection, rapid isolation, forensics capture, and evidence preservation for legal proceedings.</p>
+  <div class="metrics" style="margin-bottom:2.5rem;">
+    <div class="metric"><p class="metric-num">5</p><p class="metric-label">Incident playbooks in development</p></div>
+    <div class="metric"><p class="metric-num">100%</p><p class="metric-label">Case systems covered</p></div>
+    <div class="metric"><p class="metric-num">72 hours</p><p class="metric-label">Target containment window</p></div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Response framework</h3>
+      <div class="steps">
+        <div class="step"><span class="step-num">01</span><div><p class="step-title">Detect &amp; alert</p><p class="step-desc">Real-time anomalous-access alerts on Tier 4 systems trigger immediate escalation.</p></div></div>
+        <div class="step"><span class="step-num">02</span><div><p class="step-title">Immediate containment</p><p class="step-desc">Isolate affected data; revoke compromised credentials; lock audit logs.</p></div></div>
+        <div class="step"><span class="step-num">03</span><div><p class="step-title">Forensics &amp; evidence</p><p class="step-desc">Capture session recordings, access logs, and communications for legal review.</p></div></div>
+        <div class="step"><span class="step-num">04</span><div><p class="step-title">Legal hold &amp; escalation</p><p class="step-desc">Dual sign-off on legal hold. Notify law enforcement and case parties per SCA.</p></div></div>
+        <div class="step"><span class="step-num">05</span><div><p class="step-title">Remediation &amp; validation</p><p class="step-desc">Fix underlying vulnerability. Validate controls before system re-enablement.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Violation types &amp; protocols</h3>
+      <table class="reg-table">
+        <thead><tr><th>Violation Type</th><th>SCA/ECPA Implication</th></tr></thead>
+        <tbody>
+          <tr><td>Unauthorized access to minor record</td><td>Potential § 2703 violation — law enforcement escalation required</td></tr>
+          <tr><td>Breach of SCA-protected communication</td><td>Wiretap Act exposure — immediate legal review</td></tr>
+          <tr><td>Improper data disclosure to third party</td><td>COPPA/CCPA violation — affected parties notified within 72 hours</td></tr>
+          <tr><td>Failure to execute legal hold</td><td>Evidence spoliation risk — dual sign-off enforcement</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="audit">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <h2 class="section-title">Privacy compliance audit framework</h2>
+  </div>
+  <p style="font-size:14px; color:var(--ink-2); max-width:640px; margin-bottom:2rem; line-height:1.7;">Internal auditing program validating data handling controls, access tier enforcement, retention policies, and regulatory compliance across all case systems. Quarterly audits ensure 4-tier access, pseudonymization, and deletion workflows function as designed before escalation to stakeholders.</p>
+  <div class="metrics" style="margin-bottom:2.5rem;">
+    <div class="metric"><p class="metric-num">4</p><p class="metric-label">Systems audited quarterly</p></div>
+    <div class="metric"><p class="metric-num">100%</p><p class="metric-label">Audit coverage target</p></div>
+    <div class="metric"><p class="metric-num">14</p><p class="metric-label">Control points per audit</p></div>
+    <div class="metric"><p class="metric-num">0</p><p class="metric-label">Control failures to production</p></div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Audit pillars</h3>
+      <div class="steps">
+        <div class="step"><span class="step-num">01</span><div><p class="step-title">Access control validation</p><p class="step-desc">Test Tier 1–4 enforcement: verify MFA/token enforcement, session recording capture, and immediate revocation on role change.</p></div></div>
+        <div class="step"><span class="step-num">02</span><div><p class="step-title">Data minimization &amp; classification</p><p class="step-desc">Test intake workflows ensure only necessary fields collected. Validate classification logic at ingestion.</p></div></div>
+        <div class="step"><span class="step-num">03</span><div><p class="step-title">Pseudonymization &amp; redaction</p><p class="step-desc">Sample case files confirm minor identifiers pseudonymized; test automated redaction pipelines.</p></div></div>
+        <div class="step"><span class="step-num">04</span><div><p class="step-title">Retention &amp; deletion</p><p class="step-desc">Validate auto-expiry flags trigger on schedule. Confirm legal holds override deletion; test backup deletion confirmation.</p></div></div>
+        <div class="step"><span class="step-num">05</span><div><p class="step-title">Regulatory alignment check</p><p class="step-desc">Confirm controls map to documented legal basis (ECPA, SCA, COPPA, GDPR, HIPAA). Review incident logs for violations.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Audit schedule &amp; ownership</h3>
+      <table class="reg-table">
+        <thead><tr><th>System</th><th>Frequency</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>Case intake &amp; classification</td><td>Quarterly</td><td>Data Handling Policy Specialist</td></tr>
+          <tr><td>Access control enforcement</td><td>Quarterly</td><td>IT / Security</td></tr>
+          <tr><td>Retention &amp; deletion workflows</td><td>Quarterly</td><td>Data Governance</td></tr>
+          <tr><td>Pseudonymization pipelines</td><td>Quarterly</td><td>Data Engineering</td></tr>
+          <tr><td>Full program audit</td><td>Semi-annual</td><td>DPO / Legal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="tools">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <h2 class="section-title">Child-safety tool assessment matrix</h2>
+  </div>
+  <p style="font-size:14px; color:var(--ink-2); max-width:640px; margin-bottom:2rem; line-height:1.7;">Structured evaluation of third-party tools before they handle minor data. Custom risk scoring framework covering SCA compliance, data residency, encryption, logging, user access controls, and bias risk. No tool deploys without privacy sign-off and documented legal basis.</p>
+  <div class="metrics" style="margin-bottom:2.5rem;">
+    <div class="metric"><p class="metric-num">15+</p><p class="metric-label">Tools assessed in 2024</p></div>
+    <div class="metric"><p class="metric-num">8</p><p class="metric-label">Deployed compliant</p></div>
+    <div class="metric"><p class="metric-num">5</p><p class="metric-label">Vendor remediation conditions</p></div>
+    <div class="metric"><p class="metric-num">2</p><p class="metric-label">Rejected — non-negotiable on SCA/ECPA</p></div>
+  </div>
+  <div style="margin-bottom:2rem;">
+    <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Risk scoring framework</h3>
+    <table class="reg-table">
+      <thead><tr><th>Assessment Dimension</th><th>Acceptable</th><th>Red Flag</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SCA compliance</strong></td><td>No unauthorized access; logging of all case data touches; law enforcement protocol documented</td><td>Vague access controls; no logging; no law enforcement escalation path</td></tr>
+        <tr><td><strong>Data residency &amp; transfers</strong></td><td>EU/US data hosted within defined geography; documented legal transfer mechanism (SCCs, standard contractual clauses)</td><td>Data routed to undefined locations; no transfer agreement</td></tr>
+        <tr><td><strong>Encryption &amp; security</strong></td><td>AES-256 at rest; TLS 1.3 in transit; SOC 2 Type II or equivalent; annual penetration testing</td><td>No encryption documented; no SOC 2; no pen test cadence</td></tr>
+        <tr><td><strong>Audit logging &amp; session recording</strong></td><td>Tamper-proof audit logs; session recording for Tier 4 access; 2-year retention minimum</td><td>No audit trail; unencrypted logs; log deletion allowed</td></tr>
+        <tr><td><strong>Access &amp; authentication</strong></td><td>MFA mandatory; least-privilege role assignment; quarterly access reviews; immediate revocation on termination</td><td>Single-factor auth; overly broad default permissions; no access review</td></tr>
+        <tr><td><strong>AI &amp; bias risk</strong></td><td>No AI processing on minor data; no behavioral prediction; transparent algorithms if any use case applies</td><td>Undisclosed AI; automated decisions on minors; no bias testing</td></tr>
+        <tr><td><strong>Breach notification</strong></td><td>Contractual 24-hour notification; incident communication plan; prior incident history reviewed</td><td>No notification obligation; slow notification clause; undisclosed past breaches</td></tr>
+        <tr><td><strong>Sub-processor transparency</strong></td><td>Complete sub-processor list; no sub-processor AI on minor data; annual verification</td><td>Vague sub-processor list; undisclosed downstream processing; AI sub-processors</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Assessment workflow</h3>
+      <div class="steps">
+        <div class="step"><span class="step-num">01</span><div><p class="step-title">Request received</p><p class="step-desc">New tool proposed or renewal flagged. Business owner provides tool name and use case.</p></div></div>
+        <div class="step"><span class="step-num">02</span><div><p class="step-title">Risk scoring</p><p class="step-desc">Complete matrix. Calculate risk level: Green (deploy), Yellow (conditional), Red (block).</p></div></div>
+        <div class="step"><span class="step-num">03</span><div><p class="step-title">Remediation (if yellow)</p><p class="step-desc">Vendor responds to gaps. Retest on critical dimensions. Document mitigations in DPA.</p></div></div>
+        <div class="step"><span class="step-num">04</span><div><p class="step-title">Legal review &amp; DPA</p><p class="step-desc">Verify contract includes SCA protocols, breach notification, sub-processor list, data location guarantees.</p></div></div>
+        <div class="step"><span class="step-num">05</span><div><p class="step-title">Sign-off &amp; deployment</p><p class="step-desc">Privacy + Legal approval required. Assessment archived. Annual renewal review scheduled.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif); font-size:1.1rem; margin-bottom:1rem;">Current tool inventory</h3>
+      <table class="reg-table">
+        <thead><tr><th>Tool</th><th>Use Case</th><th>Risk Level</th></tr></thead>
+        <tbody>
+          <tr><td>Microsoft Azure (infrastructure)</td><td>Case data hosting, backup, encryption</td><td>Green</td></tr>
+          <tr><td>Slack (case communications)</td><td>Internal team collaboration on cases</td><td>Green</td></tr>
+          <tr><td>Zendesk (case tracking)</td><td>Case intake, routing, workflow automation</td><td>Green</td></tr>
+          <tr><td>Auth0 (identity)</td><td>MFA, session management, access control</td><td>Green</td></tr>
+          <tr><td>DataBox (analytics)</td><td>Anonymized compliance dashboards</td><td>Green</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="contact">
+  <div class="section-header">
+    <span class="section-num">—</span>
+    <h2 class="section-title">Let's connect</h2>
+  </div>
+  <p style="font-size:15px; color:var(--ink-2); max-width:580px; line-height:1.75; margin-bottom:2rem;">Currently exploring Privacy Manager, DPO, Privacy Compliance Engineer, and Privacy Program Manager roles where I can build, lead, and operationalize privacy programs at scale. Remote and hybrid considered.</p>
+  <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+    <div><p style="font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:0.4rem;">Email</p><a href="mailto:durray25@gmail.com" style="font-size:15px; color:var(--accent); font-weight:500; text-decoration:none;">durray25@gmail.com</a></div>
+    <div><p style="font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:0.4rem;">Phone</p><a href="tel:8456658202" style="font-size:15px; color:var(--accent); font-weight:500; text-decoration:none;">(845) 665-8202</a></div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Durray Kausar</span>
+  <div class="footer-links">
+    <a href="mailto:durray25@gmail.com">Email</a>
+    <a href="tel:8456658202">Phone</a>
+  </div>
+</footer>
+
+</body>
+</html>

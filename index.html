@@ -1,222 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Durray Kausar | Privacy & AI Governance Architect</title>
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #212529;
-            --primary: #1e3a8a; /* Deep corporate blue */
-            --secondary: #475569;
-            --accent: #0f766e; /* Professional teal */
-            --border: #e2e8f0;
-            --white: #ffffff;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 2.5rem 1rem;
-            text-align: center;
-        }
-        .container {
-            max-width: 950px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        h1 { margin: 0; color: var(--primary); font-size: 2.4rem; font-weight: 700; letter-spacing: -0.05em; }
-        .subtitle { color: var(--secondary); font-size: 1.25rem; margin-top: 0.5rem; font-weight: 500; }
-        .contact-links { margin-top: 1.2rem; font-size: 0.95rem; }
-        .contact-links a { color: var(--accent); text-decoration: none; margin: 0 12px; font-weight: 600; }
-        .contact-links a:hover { text-decoration: underline; }
-        
-        .card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(15, 118, 110, 0.08); /* Sophisticated accent glow */
-        }
-        
-        h2 { color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-top: 0; font-size: 1.5rem; }
-        h3 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1.15rem; margin-top: 1.5rem; }
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; }
-        p { margin-bottom: 1rem; color: #334155; }
-        strong { color: var(--primary); }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        th, td {
-            border: 1px solid var(--border);
-            padding: 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th { background-color: #f1f5f9; color: var(--primary); font-weight: 600; }
-        tr:nth-child(even) { background-color: #f8fafc; }
-    </style>
-</head>
-<body>
+Privacy Framework & Compliance Architecture Portfolio
+Durray Kausar | Data Privacy Specialist | Privacy Framework Architect
 
-<header>
-    <h1>DURRAY KAUSAR</h1>
-    <div class="subtitle">Privacy Architecture & AI Governance Portfolio</div>
-    <div class="contact-links">
-        <a href="mailto:durray25@gmail.com">durray25@gmail.com</a> | 
-        <a href="tel:8456658202">(845) 665-8202</a> | 
-        <a href="https://github.com/durrayk-privacy" target="_blank">GitHub Profile</a>
-    </div>
-</header>
 
-<div class="container">
+Overview
+Data Privacy Specialist with 2+ years designing privacy frameworks and compliance policies for systems handling sensitive data. MSc in Cybersecurity & Data Privacy Law with expertise in COPPA, NIST, GDPR, CCPA, AI Act, and emerging privacy regulations.
 
-    <div class="card">
-        <h2>Executive Summary</h2>
-        <p>This portfolio documents operational privacy architectures, technical governance frameworks, and data minimization pipelines engineered to secure sensitive data assets across complex regulatory environments. Focus domains include the <strong>Stored Communications Act (SCA)</strong>, <strong>COPPA</strong>, <strong>ECPA</strong>, <strong>GDPR</strong>, and <strong>HIPAA</strong>.</p>
-    </div>
+I design governance frameworks that translate complex regulatory requirements into operational reality—working cross-functionally with IT, Legal, and Operations teams to implement privacy architecture.
 
-    <div class="card">
-        <h2>01. Access Control Architecture (4-Tier Model)</h2>
-        <p>Designed and validated tiered access controls governing high-stakes datasets to enforce strict zero-trust operational parameters.</p>
-        
-        <h3>Tier 4 - Minor Records (Highest Risk)</h3>
-        <ul>
-            <li>Hardware token MFA mandates paired with real-time anomalous access alerts and automated session recording.</li>
-            <li>Just-In-Time (JIT) access authorization active for live case processing only; immediate credential revocation executes upon role updates.</li>
-            <li>Enforced mandatory quarterly access verification reviews.</li>
-        </ul>
-        
-        <h3>Tiers 1-3 - Case-Related Data</h3>
-        <ul>
-            <li>Software-based MFA tokens required alongside contextual device compliance posture checks.</li>
-            <li>Enforced least-privilege role assignments with comprehensive audit logging of all system touches.</li>
-        </ul>
-        <p style="margin-top: 1.2rem;"><strong>Result:</strong> 100% control coverage achieved pre-launch; zero unauthorized access failures recorded across development and production testing pipelines.</p>
-    </div>
 
-    <div class="card">
-        <h2>02. Data Minimization & Retention Pipelines</h2>
-        <p>Operationalized programmatic data pipelines ensuring structural compliance from intake through deletion lifecycles.</p>
-        <ul>
-            <li><strong>At Intake:</strong> Data injection parameters are strictly constrained to necessary transactional fields mapped directly to documented legal bases.</li>
-            <li><strong>In Transit & At Rest:</strong> Core identifiers are dynamically pseudonymized (e.g., 'Minor_ID_00127'), with automated PII redaction rules executed prior to UI presentation layer rendering. Cryptographic protections utilize AES-256 at rest and TLS 1.3 in transit.</li>
-            <li><strong>At Expiration:</strong> Automated expiry flags trigger programmatic deletions on retention schedules. Overriding legal holds require verified dual-authorized sign-offs.</li>
-        </ul>
-    </div>
+Core Expertise
+Privacy Framework Design & Architecture
+Privacy framework design for regulated data environments
+Compliance policy development (COPPA, NIST, GDPR, CCPA, AI Act)
+Data governance and privacy-by-design frameworks
+Privacy architecture implementation with cross-functional teams
+Regulatory Legal Research
+Regulatory requirement analysis and interpretation
+Compliance gap identification and remediation
+Alignment with emerging privacy regulations
+Legal-to-operational translation
+Specialized Areas
+Child Safety Compliance: COPPA frameworks, minor data protection, consent mechanisms
+AI Governance: Algorithmic compliance, bias assessment frameworks, transparency requirements
+Data Protection: FERPA, GDPR, CCPA, SCA/ECPA compliance frameworks
+Third-Party Assessment: Vendor compliance evaluation and governance requirements
 
-    <div class="card">
-        <h2>03. Vendor Risk Assessment & DPA Framework</h2>
-        <p>Built a custom risk-scoring compliance matrix deployed to audit third-party services handling highly sensitive operational metrics. Successfully evaluated 15+ specialized vendor systems, deploying 8 platforms under green clear criteria and rejecting non-negotiable compliance gaps.</p>
-        
-        <h3>DPA Architecture Mandates</h3>
-        <ul>
-            <li><strong>Algorithmic Transparency:</strong> Binding disclosures covering underlying training datasets and demographic bias testing results categorized by race, age, and gender.</li>
-            <li><strong>Technical Guardrails:</strong> Contractual and engineering blocks preventing the continuous automated re-indexing or web-crawling of deleted data profiles.</li>
-            <li><strong>Downstream Enforcement:</strong> Sub-processor notification boundaries capped at 5-10 days paired with mandatory annual SOC 2 Type II audit verifications.</li>
-        </ul>
-    </div>
 
-    <div class="card">
-        <h2>04. AI Governance & EU AI Act Risk Framework</h2>
-        <p>Constructed an enterprise AI governance framework classifying, cataloging, and mitigating pipeline deployments against established regulatory risk models.</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 25%;">Risk Level</th>
-                    <th style="width: 35%;">Examples</th>
-                    <th style="width: 40%;">Operational Control Parameters</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Unacceptable</strong></td>
-                    <td>Social scoring systems, real-time remote biometric surveillance.</td>
-                    <td>Strictly blocked across production environment.</td>
-                </tr>
-                <tr>
-                    <td><strong>High Risk</strong></td>
-                    <td>Automated administrative scoring algorithms, behavioral prediction engines.</td>
-                    <td>Mandatory DPIAs, robust system audit trails, and human-in-the-loop review gates.</td>
-                </tr>
-                <tr>
-                    <td><strong>Limited Risk</strong></td>
-                    <td>Conversational AI chatbots, algorithmic content recommendations.</td>
-                    <td>Enforced transparency disclosures and prominent user notice parameters.</td>
-                </tr>
-                <tr>
-                    <td><strong>Minimal Risk</strong></td>
-                    <td>Contextual spell-check tools, scheduling automation utilities.</td>
-                    <td>Internal structural policy controls only.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+Recent Work
+Havenwatch Foundation for Child Protection (2026–Present)
+Data Privacy Specialist | Remote
 
-    <div class="card">
-        <h2>05. Incident Response & Breach Containment Playbooks</h2>
-        <p>Engineered responsive, highly documented containment playbooks targeting strict 72-hour isolation limits for production system anomalies.</p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 35%;">Violation Vector</th>
-                    <th style="width: 30%;">Regulatory Exposure</th>
-                    <th style="width: 35%;">Remediation Protocol Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Unauthorized minor record exposure.</td>
-                    <td>§ 2703 Stored Communications Act (SCA)</td>
-                    <td>Immediate isolation containment and law enforcement escalation.</td>
-                </tr>
-                <tr>
-                    <td>Breach of protected communications.</td>
-                    <td>Wiretap Act / ECPA</td>
-                    <td>Immediate legal counsel operational review initialization.</td>
-                </tr>
-                <tr>
-                    <td>Improper third-party disclosure.</td>
-                    <td>COPPA / CCPA</td>
-                    <td>Automated stakeholder and affected party notification within 72 hours.</td>
-                </tr>
-                <tr>
-                    <td>Failure to execute active legal hold.</td>
-                    <td>Evidence Spoliation</td>
-                    <td>Enforcement of programmatic locks requiring dual-authorized sign-off.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+Privacy Frameworks Designed:
 
-    <div class="card">
-        <h2>06. Compliance Audit Program</h2>
-        <p>Maintained a rigid internal auditing program designed to validate production controls across quarterly schedules, successfully maintaining <strong>zero control failures</strong> in production deployments.</p>
-        <p>Audits perform recurring pipeline validation checks across four structural pillars: verifying access control tier enforcement, auditing data minimization pipelines, inspecting automated redaction rules, and confirming back-end data deletion cycles alongside legal hold overrides.</p>
-    </div>
+Access Control Governance Framework → Designed for 4 production systems protecting sensitive minor data → Achieved 100% pre-launch control certification with zero post-launch failures → Prevented regulatory violations and compliance risk
+COPPA Consent & Data Minimization Framework → Translated regulatory requirements into operational policies → Prevented unauthorized data collection and regulatory exposure
+AI Governance Compliance Framework → Designed algorithmic bias assessment and compliance protocols → Enabled safe deployment of automated systems → Prevented discriminatory decision-making
+Incident Response & Breach Notification Framework → Aligned with SCA/ECPA requirements → Enabled 72-hour breach investigation and escalation capability
 
-</div>
+Compliance Assessment & Vendor Risk:
 
-</body>
-</html>
+Evaluated 15+ third-party tools and integrations against COPPA, GDPR, CCPA standards
+Identified 7 critical compliance gaps in vendor implementations
+Rejected non-compliant vendors → Prevented deployment of tools that would have created regulatory exposure and compliance violations
+
+Cross-Functional Implementation:
+
+Collaborated with IT, Legal, Operations on privacy framework deployment
+Ensured cross-functional alignment on compliance requirements
+Conducted ongoing compliance validation and remediation
+
+
+Triad Math & Science Academy (2023–Present)
+Privacy Policy & Compliance Advisor | North Carolina
+
+Policy & Framework Development:
+
+Regulatory Legal Research → Analyzed FERPA, COPPA, CCPA, AI governance, NC privacy laws for 10-campus environment → Identified compliance gaps and governance requirements
+Privacy Policy Frameworks → Developed policies including whistleblower protections aligned with updated CCPA and AI Act → Ensured compliance with current regulatory standards
+Compliance Gap Remediation → Identified gaps in existing policies and data handling practices → Designed remediation recommendations → Reduced regulatory risk and enabled policy updates
+AI Tool Assessment Framework → Researched compliance requirements for educational EdTech tools → Designed assessment protocols → Enabled informed decision-making on tool adoption
+
+Governance Implementation:
+
+Collaborated with school leadership and IT on privacy governance adoption
+Ensured compliance framework integration across organization
+Provided ongoing compliance alignment and regulatory updates
+
+
+Educational Organizations (2012–Present)
+Data Protection Specialist & Data Custodian
+
+Data Governance & Compliance:
+
+FERPA-Compliant Data Management → Managed sensitive student data for 12+ years in regulated environments → Ensured data confidentiality and compliance with federal data protection requirements
+Data Custodian Governance → Managed access controls, data governance, and regulatory compliance → Prevented unauthorized data access and compliance violations
+Privacy Regulatory Research → Researched education privacy regulations and data handling compliance frameworks → Informed organizational privacy policies and governance practices
+
+
+Regulatory Knowledge
+US Federal:
+
+COPPA (Children's Online Privacy Protection Act)
+FERPA (Family Educational Rights and Privacy Act)
+CCPA (California Consumer Privacy Act)
+HIPAA (Health Insurance Portability and Accountability Act)
+SCA/ECPA (Stored Communications Act / Electronic Communications Privacy Act)
+
+International & Emerging:
+
+GDPR (General Data Protection Regulation)
+AI Act (EU Artificial Intelligence Act)
+NIST Privacy Framework
+State privacy laws (North Carolina, California, emerging regulations)
+
+
+Education & Credentials
+MS, Cybersecurity & Data Privacy Law | Albany Law School, New York (2021–2023)
+
+BA, Political Science | University of Missouri–St. Louis (2011)
+
+Certifications:
+
+HIPAA Certified
+CIPP/US (Expected Q3 2026)
+
+
+Get in Touch
+Email: durray25@gmail.com
+Phone: (845) 665-8202
+LinkedIn: linkedin.com/in/durray
+Location: Remote | New York & NC
